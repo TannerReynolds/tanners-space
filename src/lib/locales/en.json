@@ -1,0 +1,16 @@
+{
+	"link.gallery": "Gallery",
+	"link.home": "Home",
+	"link.cdn": "CDN",
+	"link.anime": "Anime",
+	"link.tab": "New Tab",
+	"link.github": "GitHub",
+	"link.instagram": "Instagram",
+	"link.discord": "Discord Server",
+	"link.blog": "Blog",
+	"download": "Download",
+	"gallery.category.astro": "Astro",
+	"gallery.category.cars": "Cars",
+	"gallery.category.landscape": "Landscape",
+	"blog.category.politics": "Politics"
+}
