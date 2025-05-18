@@ -46,6 +46,7 @@
 			<img
 				src={img.thumb}
 				alt="Thumbnail"
+        loading="lazy"
 				class="cursor-pointer rounded shadow transition hover:scale-102"
 				on:click={() => {
 					currentImage = img.full;
