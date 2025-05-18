@@ -10,7 +10,7 @@ const md = markdownit({
 
 export async function load({ params }) {
 	const { category, slug } = params;
-	const decodedSlug = decodeURIComponent(slug); 
+	const decodedSlug = decodeURIComponent(slug);
 	const fullPath = path.resolve(`static/Blog/${category}/${decodedSlug}`);
 
 	if (!fs.existsSync(fullPath)) {

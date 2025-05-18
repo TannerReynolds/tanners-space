@@ -3,10 +3,10 @@
 </script>
 
 <div style="height: 30px"></div>
-<main class="prose max-w-none mx-5 p-6 md:mx-50 bg-base-200 rounded-xl">
-	<h1 class="text-3xl font-bold mb-2">{data.title}</h1>
+<main class="prose bg-base-200 mx-5 max-w-none rounded-xl p-6 md:mx-50">
+	<h1 class="mb-2 text-3xl font-bold">{data.title}</h1>
 	{#if data.date}
-		<p class="text-sm text-base-content/70 mb-4">{data.date}</p>
+		<p class="text-base-content/70 mb-4 text-sm">{data.date}</p>
 	{/if}
 	{@html data.html}
 </main>

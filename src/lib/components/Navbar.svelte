@@ -53,27 +53,27 @@
 
 <!-- NAVBAR -->
 <div class="flex justify-center pt-8">
-	<div class="flex items-center gap-4 bg-base-200 p-4 rounded-box">
+	<div class="bg-base-200 rounded-box flex items-center gap-4 p-4">
 		<!-- TABS -->
 		<div role="tablist" class="tabs tabs-boxed relative">
 			<!-- Animated background "slider" -->
 			<div
-				class="absolute h-full bg-accent rounded-btn transition-all duration-300 z-0"
+				class="bg-accent rounded-btn absolute z-0 h-full transition-all duration-300"
 				style="width: 0px; transform: translateX(0px); border-radius: 9px;"
 				bind:this={slider}
 			></div>
 
 			<!-- Tabs -->
 			{#each tabs as tab, i}
-	<a
-		role="tab"
-		href={tab.href}
-		class="tab relative z-10 font-semibold text-base-content"
-		bind:this={tabRefs[i]}
-	>
-		{$t(`link.${tab.label.toLowerCase()}`)}
-	</a>
-{/each}
+				<a
+					role="tab"
+					href={tab.href}
+					class="tab text-base-content relative z-10 font-semibold"
+					bind:this={tabRefs[i]}
+				>
+					{$t(`link.${tab.label.toLowerCase()}`)}
+				</a>
+			{/each}
 		</div>
 
 		<!-- CONTROLS -->
@@ -85,13 +85,13 @@
 			<select class="select select-sm text-center leading-tight" data-choose-theme>
 				<option value="coffee">☕ Coffee</option>
 				<option value="cupcake">🧁 Cupcake</option>
-        <option value="valentine">💖 Valentine</option>
-        <option value="night">🌘 Night</option>
-        <option value="forest">🌲 Forest</option>
-        <option value="black">⚫ OLED</option>
-        <option value="luxury">💎 Luxury</option>
-        <option value="caramellatte">🧋 Boba Tea</option>
-        <option value="retro">💾 Retro</option>
+				<option value="valentine">💖 Valentine</option>
+				<option value="night">🌘 Night</option>
+				<option value="forest">🌲 Forest</option>
+				<option value="black">⚫ OLED</option>
+				<option value="luxury">💎 Luxury</option>
+				<option value="caramellatte">🧋 Boba Tea</option>
+				<option value="retro">💾 Retro</option>
 			</select>
 		</div>
 	</div>

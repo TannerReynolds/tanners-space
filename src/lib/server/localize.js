@@ -1,8 +1,8 @@
-import en from '$lib/locales/en.json'
-import ja from '$lib/locales/ja.json'
+import en from '$lib/locales/en.json';
+import ja from '$lib/locales/ja.json';
 
-const translations = { en, ja }
+const translations = { en, ja };
 
 export function localize(key, locale = 'en') {
-  return translations[locale]?.[key] ?? translations.en?.[key] ?? key
+	return translations[locale]?.[key] ?? translations.en?.[key] ?? key;
 }

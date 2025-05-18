@@ -2,17 +2,18 @@
 <script lang="js">
 	import '../app.css';
 	import Navbar from '$lib/components/Navbar.svelte';
+	import { onMount } from 'svelte';
+	import { loadGalleryImages } from '$lib/utils/loadGalleryImages.js';
+
 	export let data;
 
-	import { onMount } from 'svelte';
+	let allImages = [];
 
-	onMount(() => {
-		for (const url of data.allImages) {
-			const img = new Image();
-			img.src = url;
-		}
+	onMount(async () => {
+		allImages = await loadGalleryImages();
 	});
 </script>
+
 <svelte:head>
 	{#each data.allImages as img}
 		<link rel="preload" as="image" href={img} />

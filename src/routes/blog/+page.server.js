@@ -6,9 +6,9 @@ export async function load() {
 	const blogDir = path.resolve('static/Blog');
 
 	// Get all folders in /Blog (each one is a category)
-	const categories = fs.readdirSync(blogDir).filter((folder) =>
-		fs.statSync(path.join(blogDir, folder)).isDirectory()
-	);
+	const categories = fs
+		.readdirSync(blogDir)
+		.filter((folder) => fs.statSync(path.join(blogDir, folder)).isDirectory());
 
 	const posts = [];
 
@@ -23,7 +23,11 @@ export async function load() {
 			const match = content.match(/<!--\s*(\d{4}-\d{2}-\d{2})\s*-->/);
 			const date = match ? match[1] : 'Unknown Date';
 
-			const preview = content.replace(/<!--.*?-->/, '').trim().slice(0, 256) + '...';
+			const preview =
+				content
+					.replace(/<!--.*?-->/, '')
+					.trim()
+					.slice(0, 256) + '...';
 			const title = file.replace(/\.md$/, '');
 			const slug = encodeURIComponent(file); // handle spaces safely
 

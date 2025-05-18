@@ -8,7 +8,7 @@
 	let modalOpen = false;
 	let currentImage = '';
 
-  const localizeCategory = (name) => {
+	const localizeCategory = (name) => {
 		const key = `gallery.category.${name.toLowerCase()}`;
 		const translation = $t(key);
 		return translation === key ? name : translation;
@@ -24,8 +24,9 @@
 		selectedCategory = cat === selectedCategory ? '' : cat;
 	};
 </script>
+
 <div style="height: 30px"></div>
-<form class="filter justify-center mb-6">
+<form class="mb-6 justify-center filter">
 	<input class="btn btn-square" type="reset" value="×" on:click={() => (selectedCategory = '')} />
 	{#each data.categories as cat}
 		<input
@@ -39,25 +40,28 @@
 	{/each}
 </form>
 
-<div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 px-4">
+<div class="grid grid-cols-2 gap-4 px-4 md:grid-cols-3 lg:grid-cols-4">
 	{#each filteredImages() as img}
-	<div class="bg-base-200 p-4 rounded-lg">	
-  <img
-			src={img.thumb}
-			alt="Thumbnail"
-			class="cursor-pointer rounded shadow hover:scale-102 transition"
-			on:click={() => {
-				currentImage = img.full;
-				modalOpen = true;
-			}}
-		/>
-    </div>
+		<div class="bg-base-200 rounded-lg p-4">
+			<img
+				src={img.thumb}
+				alt="Thumbnail"
+				class="cursor-pointer rounded shadow transition hover:scale-102"
+				on:click={() => {
+					currentImage = img.full;
+					modalOpen = true;
+				}}
+			/>
+		</div>
 	{/each}
 </div>
 
 {#if modalOpen}
-	<div class="fixed inset-0 bg-base-300 bg-opacity-80 z-50 flex items-center justify-center">
+	<div class="bg-base-300 bg-opacity-80 fixed inset-0 z-50 flex items-center justify-center">
 		<img src={currentImage} class="max-h-[90vh] max-w-[90vw] rounded shadow-lg" />
-		<button class="absolute top-4 right-4 btn btn-circle btn-error" on:click={() => (modalOpen = false)}>✕</button>
+		<button
+			class="btn btn-circle btn-error absolute top-4 right-4"
+			on:click={() => (modalOpen = false)}>✕</button
+		>
 	</div>
 {/if}
