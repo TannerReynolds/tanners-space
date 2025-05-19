@@ -15,7 +15,6 @@
 		return translation === key ? name : translation;
 	};
 
-	// Filter posts by selected category
 	$: filteredPosts = selectedCategory
 		? data.posts.filter((p) => p.category === selectedCategory)
 		: data.posts;
@@ -40,7 +39,7 @@
 <!-- Blog Post Cards -->
 <div class="space-y-8">
 	{#each filteredPosts as post}
-		<article class="card bg-base-200 mx-50 my-8 shadow-lg">
+		<article class="card bg-base-200 mx-5 my-8 shadow-lg md:mx-50">
 			<div class="card-body">
 				<div class="text-base-content/70 mb-2 text-sm">{post.date}</div>
 				<h2 class="card-title hover:text-primary text-xl font-bold transition-colors">

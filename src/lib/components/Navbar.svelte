@@ -34,7 +34,8 @@
 	const tabs = [
 		{ label: 'Home', href: '/' },
 		{ label: 'Gallery', href: '/gallery' },
-		{ label: 'Blog', href: '/blog' }
+		{ label: 'Blog', href: '/blog' },
+		{ label: 'Tools', href: '/tools' }
 	];
 
 	let tabRefs = [];
@@ -52,10 +53,12 @@
 </script>
 
 <!-- NAVBAR -->
-<div class="flex justify-center pt-8">
-	<div class="bg-base-200 rounded-box flex items-center gap-4 p-4">
-		<!-- TABS -->
-		<div role="tablist" class="tabs tabs-boxed relative">
+<div class="flex justify-center px-4 pt-8">
+	<div
+		class="bg-base-200 rounded-box flex flex-wrap items-center justify-between gap-4 px-4 py-3 md:flex-nowrap lg:mx-70"
+	>
+		<!-- Desktop Tabs -->
+		<div class="tabs tabs-boxed relative hidden md:flex" role="tablist">
 			<!-- Animated background "slider" -->
 			<div
 				class="bg-accent rounded-btn absolute z-0 h-full transition-all duration-300"
@@ -76,13 +79,27 @@
 			{/each}
 		</div>
 
-		<!-- CONTROLS -->
-		<div class="flex gap-2">
+		<!-- Mobile Nav -->
+		<div class="dropdown md:hidden">
+			<label tabindex="0" class="btn btn-sm btn-outline">
+				☰ {$t(`link.${tabs[activeIndex]?.label.toLowerCase()}`) || 'Menu'}
+			</label>
+			<ul tabindex="0" class="dropdown-content menu bg-base-200 rounded-box z-[1] w-52 p-2 shadow">
+				{#each tabs as tab}
+					<li>
+						<a href={tab.href}>{$t(`link.${tab.label.toLowerCase()}`)}</a>
+					</li>
+				{/each}
+			</ul>
+		</div>
+
+		<!-- Controls -->
+		<div class="ml-auto flex items-center gap-2">
 			<button class="btn btn-sm" on:click={switchLocale}>
 				<img src={$locale === 'en' ? '/us.svg' : '/jp.svg'} class="h-6 w-6" />
 			</button>
 
-			<select class="select select-sm text-center leading-tight" data-choose-theme>
+			<select class="select select-sm max-w-[8rem] text-center leading-tight" data-choose-theme>
 				<option value="coffee">☕ Coffee</option>
 				<option value="cupcake">🧁 Cupcake</option>
 				<option value="valentine">💖 Valentine</option>

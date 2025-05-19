@@ -6,7 +6,6 @@
 	export let data;
 </script>
 
-<svelte:head>
-</svelte:head>
+<svelte:head></svelte:head>
 <Navbar />
 <slot />

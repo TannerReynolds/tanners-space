@@ -40,14 +40,14 @@
 	{/each}
 </form>
 
-<div class="grid grid-cols-2 gap-4 px-4 md:grid-cols-3 lg:grid-cols-4">
+<div class="grid grid-cols-2 place-items-start gap-4 px-4 md:grid-cols-3 lg:grid-cols-4">
 	{#each filteredImages() as img}
-		<div class="bg-base-200 rounded-lg p-4">
+		<div class="bg-base-200 inline-block rounded-lg p-4">
 			<img
 				src={img.thumb}
 				alt="Thumbnail"
-        loading="lazy"
-				class="cursor-pointer rounded shadow transition hover:scale-102"
+				loading="lazy"
+				class="h-auto w-full cursor-pointer rounded shadow transition hover:scale-102"
 				on:click={() => {
 					currentImage = img.full;
 					modalOpen = true;

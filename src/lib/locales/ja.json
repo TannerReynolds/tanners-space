@@ -8,9 +8,13 @@
 	"link.instagram": "インスタグラッム",
 	"link.discord": "ディスコード",
 	"link.blog": "ブログ",
+	"link.tools": "道具",
 	"download": "ダウンロード",
 	"gallery.category.astro": "宇宙",
 	"gallery.category.cars": "車",
 	"gallery.category.landscape": "風景",
+	"gallery.category.animals": "動物",
+	"gallery.category.people": "人",
+	"gallery.category.random": "ランダム",
 	"blog.category.politics": "政治"
 }

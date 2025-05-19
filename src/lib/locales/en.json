@@ -8,9 +8,13 @@
 	"link.instagram": "Instagram",
 	"link.discord": "Discord Server",
 	"link.blog": "Blog",
+	"link.tools": "Tools",
 	"download": "Download",
 	"gallery.category.astro": "Astro",
 	"gallery.category.cars": "Cars",
 	"gallery.category.landscape": "Landscape",
+	"gallery.category.animals": "Animals",
+	"gallery.category.people": "People",
+	"gallery.category.random": "Random",
 	"blog.category.politics": "Politics"
 }
